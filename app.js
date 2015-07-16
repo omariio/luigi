@@ -12,7 +12,16 @@ var clients = require('./routes/clients');
 var people = require('./routes/people');
 var aggregators = require('./routes/aggregators');
 
-// var subdomain = require('express-subdomain-handler')({ baseUrl: 'localhost', prefix: 'people', logger: false })
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
+
+var db = mongoose.connection;
+db.on('error', function(){
+  console.error("Unable to connect to mongo.  Make sure it's running?");
+  process.exit()
+  }
+);
+
 // view engine setup
 app.set('clients', path.join(__dirname, 'clients'));
 app.set('view engine', 'ejs');
@@ -28,8 +37,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(subdomain('people', people));
 app.use(subdomain('aggregators', aggregators));
 app.use('/', clients);
-
-// app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
