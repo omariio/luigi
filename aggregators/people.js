@@ -14,9 +14,11 @@ var models = require(path.resolve('./lib/models'));
 
 var router = express.Router();
 
-/* GET home page. */
+/* GET all registered people */
 router.get('/', function(req, res, next) {
-  res.send("people should b here");
+  models.People.find({}, function(err, people){
+    res.send(people);
+  });
 });
 
 //only for debugging purposes, remove later
