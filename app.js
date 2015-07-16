@@ -5,12 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var subdomain = require('express-subdomain');
-var routes = require('./routes/index');
 
 var app = express();
 
 var clients = require('./routes/clients');
 var people = require('./routes/people');
+var aggregators = require('./routes/aggregators');
 
 // var subdomain = require('express-subdomain-handler')({ baseUrl: 'localhost', prefix: 'people', logger: false })
 // view engine setup
@@ -26,6 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(subdomain('people', people));
+app.use(subdomain('aggregators', aggregators));
 app.use('/', clients);
 
 // app.use('/users', users);
