@@ -1,7 +1,15 @@
-<html>
-<head></head>
-<body>
-  <h1>Omari:</h1>
-  <p>Every person is an api, but every api is not a person</p>
-</body>
+<!doctype html>
+<html ng-app="Omari">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
+    <script src="/javascripts/omari.js"></script>
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+  <body ng-controller="selfnetController as controller">
+    <h1> Hello </h1>
+    {{people}}
+    <div ng-repeat="person in people">
+      <p>{{person.url}}</p>
+    </div>
+  </body>
 </html>

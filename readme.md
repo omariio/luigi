@@ -1,9 +1,9 @@
 
 This is the Omari site, and a selfnet demo
 
-people.omari.io will have personal APIs in the form of JSONs
-aggregators.omari.io will have aggregators in the form of APIs
-controllers.omari.io will have interfaces for creating/manipulating data
+people.omari.io will have personal APIs in the form of JSONs  
+aggregators.omari.io will have aggregators in the form of APIs  
+controllers.omari.io will have interfaces for creating/manipulating data  
 
 standard omari.io will have clients
 
@@ -21,10 +21,12 @@ Mine has these lines
 
 which means those are the urls I visit while developing locally.
 
-You need to Mongo running to start the server.  I usually use
+You need to Mongo running to start the server. I usually use
 
 ```
 sudo mongod
 ```
 
 If that doesn't work, make sure mongo is installed.
+
+You can have clients render data server-side or client-side, it's whatever you're comfortable with.
