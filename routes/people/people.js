@@ -6,7 +6,11 @@ var path = require("path");
 
 /* GET home page. */
 
+
 router.use("/tyler", require("./people/tyler"));
-//router.use("mike", require("./people/mike")) // keep doing these to add people's route files
+
+router.get("/", function(req, res){
+  res.send("apis live here");
+});
 
 module.exports = router;
