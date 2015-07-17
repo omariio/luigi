@@ -40,4 +40,4 @@ This example should register users
 curl --data "url=http://people.omari.dev:3000/jazzmike" aggregators.omari.dev:3000/people/register
 ```
 
-In principle, for the url=xxx bit, xxx can be any url that points at JSON with a firstname and lastname field, but I guess since we're currently building client-side aggregators they may need to be CORS enabled.  I'm not certain how to feel about that yet, I think we may need to stop making client side API requests and just do rendering server side so that the source is trusted?
+In principle, for the url=xxx bit, xxx can be any url that points at JSON with a firstname and lastname field, but I guess since we're currently building client-side aggregators the resource referred to may need to be CORS enabled.  I'm not certain how to feel about that yet, I think we may need to stop making client side API requests and just do rendering server side so that the source is trusted?

@@ -21,15 +21,6 @@ router.get('/', function(req, res, next) {
   });
 });
 
-//only for debugging purposes, remove later
-router.get("/test", function(req, res) {
-  models.People.find({}, function(err, users){
-    console.log("TEST:")
-    console.log(users);
-    res.send(users);
-  });
-});
-
 router.post('/register', function(req, res) {
 
   if(!req.body.url){

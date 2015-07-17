@@ -1,0 +1,1 @@
+This is the directory where all the resources associated with a certain identity live.  In other words, all resources from the route people.omari.io/tyler or any subroutes will be in the tyler folder of this folder
