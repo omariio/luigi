@@ -4,9 +4,13 @@ var express = require('express');
 var router = express.Router();
 var path = require("path");
 
-/* GET home page. */
+// ditto to note in aggregator.js
+router.use('/', function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 router.use("/tyler", require("./people/tyler"));
-//router.use("mike", require("./people/mike")) // keep doing these to add people's route files
+router.use("/jazzmike", require("./people/jazzmike"));
 
 module.exports = router;
