@@ -1,0 +1,11 @@
+{
+  "array":[
+    "Query logging- If there is a system for maintaining what fields of any given piece of data that a client asks for, then creators of APIs can use that information to reflect those conditions.  On the other hand, it seems like aggregators sort of serve this purpose too, because the existence of an aggregator means that someone has found it fit to optimize the collection of certain types of information.",
+    "Aggregator errors- It might be possible to do some sort of standardization of errors, so that we can ensure things are informative.",
+    "There is something of interest in the philosophical distinction between data that is “uploaded” or submitted, or submittable, and data that is hard-coded into the infrastructure, because fundamentally there is no reason that the hard-coded structural data can’t also be thought of as submittable data.  This seems to relate to Lisp/lambda calculus to me, but that’s just a guess.  I don’t really know how that stuff works.",
+    "The logic that dictates the interaction between some data can be done either on the client or in an aggregator, which maybe implies that it may be useful to categorize the interaction as a distinct thing.",
+    "'databases' may not be the correct way of keeping data as its aggregated.  It might be better to think of the aggregator as like a cache with specific rules about data retrieval and then build that into the architecture.  Or that can be an optional feature of different aggregators.",
+    "It seems like Mongoose should have been written as a synchronous call that just maybe takes a while, but that way you don’t have to put everything in callback as a result of db verification.  Is there any reason why that is done like that?",
+    "We are currently setting a precedent for aggregators returning arrays.  Request for comment.  Also, request for comment on the fact that I’m requesting comment?"
+  ]
+}
