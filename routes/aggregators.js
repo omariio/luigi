@@ -14,6 +14,7 @@ router.use('/', function(req, res, next) {
 });
 
 router.use("/people", require(path.resolve("./aggregators/people")));
+router.use("/devnotes", require(path.resolve("./aggregators/devnotes")));
 
 router.get("/", function(req, res){
   res.send("aggregators routes")
