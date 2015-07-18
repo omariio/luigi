@@ -39,7 +39,7 @@ router.post('/register', function(req, res) {
   }
 
   if(typeof req.body.user !== 'string' && ! (myVar instanceof String)){
-    res.send("failure: 'text' field is not a string");
+    res.send("failure: 'user' field is not a string");
     return;
   }
 
