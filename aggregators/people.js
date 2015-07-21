@@ -4,19 +4,22 @@
 
 // This aggregator verfies that
 // - the resource referred to by the url is JSON
-// - the json contains a firstname and lastname field
-
+// - the json contains a firstname and lastname field (just for demonstration)
+// - the url posted isn't a duplicate
 
 var express = require('express');
 var path = require('path');
 var rest = require(path.resolve('./lib/rest'));
-var models = require(path.resolve('./lib/models'));
+var mongoose = require('mongoose');
 
 var router = express.Router();
 
+var peopleSchema = new mongoose.Schema({url:String, time:Date}, {strict:true});
+var peopleModel = mongoose.model("People", peopleSchema);
+
 /* GET all registered people */
 router.get('/', function(req, res, next) {
-  models.People.find({}, function(err, people){
+  peopleModel.find({}, function(err, people){
     res.send(people);
   });
 });
@@ -41,13 +44,13 @@ router.post('/register', function(req, res) {
       }
 
       // Check if entry with that url already exists in db
-      models.People.findOne({url:req.body.url}, function(err, dbperson){
+      peopleModel.findOne({url:req.body.url}, function(err, dbperson){
         if(dbperson){
           res.send("API already registered");
           return;
         }
 
-        var person = new models.People({url:req.body.url, time:new Date()});
+        var person = new peopleModel({url:req.body.url, time:new Date()});
         person.save(function(err, obj){
           if(err) return res.send(err);
           res.send("Registration successful");

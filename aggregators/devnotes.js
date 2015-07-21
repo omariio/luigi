@@ -5,8 +5,6 @@
 
 var express = require('express');
 var path = require('path');
-var rest = require(path.resolve('./lib/rest'));
-// var models = require(path.resolve('./lib/models'));
 var mongoose = require('mongoose');
 
 var router = express.Router();
